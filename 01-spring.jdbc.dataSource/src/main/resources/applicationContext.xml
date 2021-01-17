@@ -8,26 +8,20 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- autowired vs -->
-	<context:annotation-config/>
+	<context:annotation-config />
 
 	<!-- repository, entity gibi anotasyonları bean olarak tanımlar. -->
-	<context:component-scan base-package="com.jdbc"/>
-	
+	<context:component-scan base-package="com.jdbc" />
+
 	<!-- jdbc datasource -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName"
-			value="com.mysql.jdbc.Driver" />
+			value="com.mysql.cj.jdbc.Driver" />
 		<property name="url"
 			value="jdbc:mysql://localhost:3306/spring_jdbc?useSSL=false&amp;serverTimezone=UTC"></property>
 		<property name="username" value="ibrahim"></property>
 		<property name="password" value="1234"></property>
 	</bean>
-
-	<!-- jdbc template -->
-	
-	
-
-
 
 </beans>

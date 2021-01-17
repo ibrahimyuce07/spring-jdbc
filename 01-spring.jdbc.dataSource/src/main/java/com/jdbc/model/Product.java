@@ -4,15 +4,14 @@ import java.util.Date;
 
 public class Product {
 
-	
 	private int productId;
-	
+
 	private String name;
-	
+
 	private double price;
 
 	private int available;
-	
+
 	private Date addDate;
 
 	public Product() {
@@ -65,11 +64,11 @@ public class Product {
 	public void setAddDate(Date addDate) {
 		this.addDate = addDate;
 	}
-	
-	
 
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", name=" + name + ", price=" + price + ", available=" + available
+				+ ", addDate=" + addDate + "]";
+	}
+
 }
