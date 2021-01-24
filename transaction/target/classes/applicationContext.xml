@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<context:component-scan base-package="com.jdbc" />
+	<context:annotation-config />
+
+	<!-- jdbc datasource -->
+	<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<property name="url"
+			value="jdbc:mysql://localhost:3306/spring_jdbc?useSSL=false&amp;serverTimezone=UTC"></property>
+		<property name="username" value="ibrahim"></property>
+		<property name="password" value="1234"></property>
+	</bean>
+
+	<bean id="userRepositoryImpl"
+		class="com.jdbc.repository.UserRepositoryImpl">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean id="userDetailRepositoryImpl" class="com.jdbc.repository.UserDetailRepositoryImpl">
+	<property name="dataSource" ref="dataSource"></property>
+	</bean>
+</beans>
